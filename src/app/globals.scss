@@ -1,6 +1,18 @@
+/* Import typographic configs (./_variables/typography.scss) */
+@import '_variables/typography';
+
 * {
   box-sizing: border-box;
 
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
+  // Configs
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
 }
