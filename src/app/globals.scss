@@ -16,3 +16,16 @@ body {
   line-height: $lineHeight;
   letter-spacing: $letterSpacing;
 }
+
+.background {
+  position: fixed;
+
+  inset: 0;
+
+  min-height: 100vh; // To prevent rescaling in mobile view.
+
+  background-image: url('../../public/bg.svg');
+  background-size: cover;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
