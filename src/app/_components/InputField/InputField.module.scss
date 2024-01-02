@@ -1,0 +1,22 @@
+/* Import color configs (./_variables/colors.scss) */
+@import '../../_variables/colors';
+
+.input {
+  padding: 1em;
+
+  color: $description;
+  background-color: $seaSalt;
+
+  border: none;
+  border-radius: 1em;
+
+  box-shadow: $platinum 0 2px 2px;
+
+  transition: 120ms ease;
+
+  &:focus {
+    transition: 120ms ease;
+    box-shadow: none;
+    outline: none;
+  }
+}
