@@ -1,0 +1,37 @@
+/* Import color configs (./_variables/colors.scss) */
+@import '../_variables/colors';
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 60vh;
+
+  margin: 2em;
+
+  border-radius: 1em;
+
+  backdrop-filter: sepia(30%) blur(5px);
+
+  .spinner {
+    width: 12em;
+    height: 12em;
+
+    border: 1px solid transparent;
+    border-top-color: $description;
+    border-radius: 50%;
+
+    animation: rotation 1000ms linear infinite;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
