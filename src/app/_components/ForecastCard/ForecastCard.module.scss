@@ -1,0 +1,160 @@
+/* Import color configs (./_variables/colors.scss) */
+@import '../../_variables/colors';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1em;
+
+  min-height: 25vh;
+  min-width: 18em;
+
+  padding: 1em;
+
+  background-color: $ghost;
+
+  border-radius: 1em;
+
+  box-shadow: $platinum 0 2px 2px;
+
+  .date {
+    font-size: 0.8em;
+    color: $description;
+  }
+
+  .layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1em;
+
+    .forecast {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .description {
+        font-size: 0.6em;
+        color: $description;
+        overflow: hidden;
+      }
+
+      .degree {
+        color: $default;
+        font-weight: 200;
+        font-size: 1.8em;
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-items: center;
+
+      font-size: 0.6em;
+      color: $description;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  width: 36px;
+  height: 36px;
+}
+
+.clear {
+  background-image: url('../../../../public/icon-brightness-low.svg');
+  animation: rotate 10s linear infinite;
+}
+
+.clouds {
+  background-image: url('../../../../public/icon-clouds.svg');
+  animation: leftRight 10s linear infinite;
+}
+
+.thunderstorm {
+  background-image: url('../../../../public/icon-cloud-lightning.svg');
+  animation: leftRight 2s linear infinite;
+}
+
+.drizzle {
+  background-image: url('../../../../public/icon-cloud-drizzle.svg');
+  animation: topBottom 10s infinite;
+}
+
+.rain {
+  background-image: url('../../../../public/icon-cloud-rain.svg');
+  animation: leftRight 5s linear infinite;
+}
+
+.snow {
+  background-image: url('../../../../public/icon-cloud-snow.svg');
+  animation: leftRight 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes topBottom {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main {
+    min-width: 100%;
+    .layout {
+      flex-wrap: wrap;
+    }
+  }
+}
