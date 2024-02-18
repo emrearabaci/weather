@@ -7,7 +7,70 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 100vh;
+  min-height: 90vh;
 
-  padding: 2em 2em;
+  margin: 2em;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2em;
+
+    padding: 4em;
+
+    border-radius: 1em;
+
+    backdrop-filter: sepia(30%) blur(5px);
+
+    .icon {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    .header {
+      text-align: center;
+      font-style: italic;
+
+      font-size: 1.8em;
+      font-weight: 1000;
+
+      color: $description;
+    }
+
+    .description {
+      max-width: 80%;
+
+      color: $description;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main {
+    .card {
+      max-width: 70vw;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    .card {
+      padding: 4em 1em;
+    }
+  }
 }
