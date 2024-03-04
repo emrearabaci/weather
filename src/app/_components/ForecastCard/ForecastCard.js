@@ -12,8 +12,6 @@ export default function ForecastCard({ forecast }) {
     priority: true
   };
 
-  //console.log(forecast.list[7]);
-
   const getForecastBackground = (weatherMain) => {
     if (weatherMain === 'Clear') {
       return [styles.icon, styles.clear];
@@ -32,19 +30,20 @@ export default function ForecastCard({ forecast }) {
     }
   };
 
-  //Snow;
-
   return (
     <>
       {forecast.list.map((item, index) => (
         <div key={index} className={styles.main}>
           <span className={styles.date}>
-            {new Date(item.dt * 1000).toLocaleString('en-GB', {
-              day: 'numeric',
-              month: 'short',
-              hour: 'numeric',
-              minute: 'numeric'
-            })}
+            {new Date((item.dt + forecast.city.timezone) * 1000).toLocaleString(
+              'en-GB',
+              {
+                day: 'numeric',
+                month: 'short',
+                hour: 'numeric',
+                minute: 'numeric'
+              }
+            )}
           </span>
           <div
             className={getForecastBackground(item.weather[0].main).join(' ')}
