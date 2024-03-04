@@ -15,12 +15,15 @@ export default function WeatherCard({ current }) {
   return (
     <div className={styles.main}>
       <span className={styles.date}>
-        {new Date(current.dt * 1000).toLocaleString('en-GB', {
-          day: 'numeric',
-          month: 'short',
-          hour: 'numeric',
-          minute: 'numeric'
-        })}
+        {new Date((current.dt + current.timezone) * 1000).toLocaleString(
+          'en-GB',
+          {
+            day: 'numeric',
+            month: 'short',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        )}
       </span>
 
       <div className={styles.layout}>
@@ -116,7 +119,9 @@ export default function WeatherCard({ current }) {
             />
             <span>
               &nbsp;
-              {new Date(current.sys.sunrise * 1000).toLocaleString('en-GB', {
+              {new Date(
+                (current.sys.sunrise + current.timezone) * 1000
+              ).toLocaleString('en-GB', {
                 hour: 'numeric',
                 minute: 'numeric'
               })}
@@ -134,7 +139,9 @@ export default function WeatherCard({ current }) {
             />
             <span>
               &nbsp;
-              {new Date(current.sys.sunset * 1000).toLocaleString('en-GB', {
+              {new Date(
+                (current.sys.sunset + current.timezone) * 1000
+              ).toLocaleString('en-GB', {
                 hour: 'numeric',
                 minute: 'numeric'
               })}
